@@ -15,9 +15,9 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PostController::class, 'index']);
+
+/*
 // 投稿の一覧ページ
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
@@ -38,3 +38,6 @@ Route::patch('/posts/{post}', [PostController::class, 'update'])->name('posts.up
 
 // 投稿の削除機能
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+*/
+
+Route::resource('posts', PostController::class);
