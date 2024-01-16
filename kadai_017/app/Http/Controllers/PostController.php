@@ -31,6 +31,7 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->content = $request->input('content');
         $post->dates = $request->input('dates');
+        $post->times = $request->input('times');
         $post->save();
 
         return redirect()->route('posts.index')->with('flash_message', '投稿が完了しました。');
